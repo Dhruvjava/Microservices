@@ -1,0 +1,19 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-enabled-onit: true
+    instance-id: ${spring.application.name}:${server.port}
+    appname: ${spring.application.name}
+    prefer-ip-address: true
+#
+server:
+  port: 80
+#
+spring:
+  application:
+    name: GAMV-GATEWAY

@@ -1,0 +1,29 @@
+#Server Config
+server:
+  port: 8888
+  
+#Application Name
+spring:
+  application:
+    name: GAMV_Wind-Config-Server
+
+#Config Server Config
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitlab.com/Dhruvjava/configserverex.git
+          password: Dhruvjava
+          username: Dk@8899082629
+          default-label: main
+        bootstrap: false
+    
+#Eureka Config
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+#  instance:
+#    instance-id: ${spring.application.name}:${server.port}
+    

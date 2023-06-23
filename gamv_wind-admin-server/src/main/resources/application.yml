@@ -1,0 +1,39 @@
+#Server.config
+server:
+  port: 9999
+
+#Application Name
+spring:
+  application:
+    name: GAMV-Wind-ADMIN-SERVER
+
+
+  #Admin Server
+
+  boot:
+    admin:
+      monitor:
+        interval: 5s
+      discovery:
+        client-eureka:
+          enabled: true
+  security:
+    user:
+      password: password
+      name: admin
+
+#Eureka Config
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
